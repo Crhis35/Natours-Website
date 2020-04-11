@@ -65,7 +65,7 @@ app.use(
   })
 );
 
-app.user(compression());
+app.use(compression());
 //Serving static files
 
 // app.use((req, res, next) => {
