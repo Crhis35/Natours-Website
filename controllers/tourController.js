@@ -33,7 +33,7 @@ exports.uploadTourImages = upload.fields([
 // upload.single('image')
 // upload.array('images', 5);
 exports.resizeTourImages = catchAsync(async (req, res, next) => {
-  console.log(req.files);
+  //console.log(req.files);
   if (!req.files.imageCover || !req.files.images) return next();
 
   // 1) Cover image
@@ -60,7 +60,7 @@ exports.resizeTourImages = catchAsync(async (req, res, next) => {
       req.body.images.push(filename);
     })
   );
-  console.log(req.body.images);
+  //console.log(req.body.images);
   next();
 });
 // const tours = JSON.parse(
@@ -74,7 +74,7 @@ exports.aliasTopTours = (req, res, next) => {
 };
 exports.getAllTours = factory.getAll(Tour);
 // exports.getAllTours = catchAsync(async (req, res, next) => {
-//   // console.log(req.requesTime);
+//   // //console.log(req.requesTime);
 //   const features = new APIFeatures(Tour.find(), req.query)
 //     .filter()
 //     .sort()
@@ -92,7 +92,7 @@ exports.getAllTours = factory.getAll(Tour);
 //     },
 //   });
 //   // try {
-//   //   console.log(req.query);
+//   //   //console.log(req.query);
 //   // BUILD QUERY
 //   // 1) Filtiring
 //   // const queryObj = { ...req.query };
@@ -102,7 +102,7 @@ exports.getAllTours = factory.getAll(Tour);
 //   // // 2) Advance Filtring
 //   // let queryStr = JSON.stringify(queryObj);
 //   // queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
-//   // console.log(queryStr);
+//   // //console.log(queryStr);
 
 //   // // {dificulty:"easy",duration:{$gte:5}}
 //   // // { page: '2', duration: { gte: '5' } }
@@ -202,7 +202,7 @@ exports.getTour = factory.getOne(Tour, { path: 'reviews' });
 //   //     message: 'Invalid'
 //   //   });
 //   // }
-//   // console.log(req.params);
+//   // //console.log(req.params);
 //   // const id = req.params.id * 1;
 //   // const tour = tours.find(el => el.id === id);
 
@@ -211,7 +211,7 @@ exports.getTour = factory.getOne(Tour, { path: 'reviews' });
 // });
 exports.createTour = factory.createOne(Tour);
 // exports.createTour = catchAsync(async (req, res, next) => {
-//   //   console.log(req.body);
+//   //   //console.log(req.body);
 //   // const newTour = new Tour({});
 //   // newTour.save();
 //   const newTour = await Tour.create(req.body);

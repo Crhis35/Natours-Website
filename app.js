@@ -6,6 +6,8 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
+const cookieParser = require('cookie-parser');
+const compression = require('compression');
 
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
@@ -14,7 +16,6 @@ const userRouter = require('./routes/usersRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
 const viewRouter = require('./routes/viewRoutes');
-const cookieParser = require('cookie-parser');
 
 const app = express();
 
@@ -64,16 +65,17 @@ app.use(
   })
 );
 
+app.user(compression());
 //Serving static files
 
 // app.use((req, res, next) => {
-//   console.log('hello from the middleware');
+//   //console.log('hello from the middleware');
 //   next();
 // });
 //Test middleware
 app.use((req, res, next) => {
   req.requesTime = new Date().toDateString();
-  console.log(req.cookies);
+  // //console.log(req.cookies);
   next();
 });
 // app.get('/', (req, res) => {

@@ -60,7 +60,7 @@ exports.getMe = (req, res, next) => {
 };
 exports.getAllUsers = factory.getAll(User);
 
-//   // console.log(req.requesTime);
+//   // //console.log(req.requesTime);
 //   const users = await User.find();
 
 //   res.status(200).json({
@@ -75,8 +75,8 @@ exports.getAllUsers = factory.getAll(User);
 // });
 exports.updateMe = catchAsync(async (req, res, next) => {
   // 1) create error if user POST password data
-  // console.log(req.file);
-  // console.log(req.body);
+  // //console.log(req.file);
+  // //console.log(req.body);
   if (req.body.password || req.body.passwordConfirm)
     return next(
       new AppError(

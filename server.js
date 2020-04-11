@@ -29,7 +29,7 @@ mongoose
 
 app.set('port', process.env.PORT || 3000);
 const server = app.listen(app.get('port'), () => {
-  console.log(`App runing on port ${app.get('port')}`);
+  //console.log(`App runing on port ${app.get('port')}`);
 });
 
 process.on('unhandledRejection', (err) => {

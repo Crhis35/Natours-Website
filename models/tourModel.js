@@ -135,7 +135,7 @@ tourSchema.virtual('reviews', {
 
 // document middleware .save and create
 tourSchema.pre('save', function (next) {
-  // console.log(this);
+  // //console.log(this);
   this.slug = slugify(this.name, { lower: true });
   next();
 });
@@ -147,11 +147,11 @@ tourSchema.pre('save', function (next) {
 // });
 
 // tourSchema.pre('save', function(next) {
-//   // console.log("Will save document");
+//   // //console.log("Will save document");
 //   next();
 // });
 // tourSchema.post('save', function(doc, next) {
-//   console.log(doc);
+//   //console.log(doc);
 //   next();
 // });
 
@@ -174,7 +174,7 @@ tourSchema.pre(/^find/, function (next) {
 //   next();
 // });
 tourSchema.post(/^find/, function (docs, next) {
-  // console.log(docs);
+  // //console.log(docs);
   next();
 });
 
@@ -189,8 +189,8 @@ module.exports = Tour;
 // testTour
 //   .save()
 //   .then(doc => {
-//     console.log(doc);
+//     //console.log(doc);
 //   })
 //   .catch(err => {
-//     console.log('Error', err);
+//     //console.log('Error', err);
 //   });
